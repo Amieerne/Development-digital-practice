@@ -1,0 +1,610 @@
+/* ================================================
+   LIGHT THEME — Gestion Clients
+   Design: Clean White + Indigo Blue Accent
+   ================================================ */
+
+/* ================================================
+   GOOGLE FONT IMPORT
+   ================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ================================================
+   CSS VARIABLES
+   ================================================ */
+:root {
+    --bg-base:            #f1f5fb;
+    --bg-subtle:          #e8eef8;
+
+    --surface-primary:    #ffffff;
+    --surface-secondary:  #f8fafd;
+    --surface-elevated:   #eef3fb;
+    --surface-hover:      #e2ebf8;
+
+    --accent-primary:     #2563eb;
+    --accent-light:       #3b82f6;
+    --accent-pale:        #dbeafe;
+    --accent-gradient:    linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+
+    --success:            #16a34a;
+    --success-pale:       #dcfce7;
+    --warning:            #d97706;
+    --warning-pale:       #fef3c7;
+    --danger:             #dc2626;
+    --danger-pale:        #fee2e2;
+
+    --text-primary:       #0f172a;
+    --text-secondary:     #334155;
+    --text-muted:         #64748b;
+    --text-accent:        #2563eb;
+
+    --border-subtle:      #e2e8f0;
+    --border-medium:      #cbd5e1;
+    --border-strong:      #94a3b8;
+    --border-accent:      rgba(37, 99, 235, 0.30);
+
+    --shadow-soft:        0 2px 10px rgba(15, 23, 42, 0.07);
+    --shadow-medium:      0 6px 24px rgba(15, 23, 42, 0.10);
+    --shadow-deep:        0 16px 48px rgba(15, 23, 42, 0.12);
+    --shadow-accent:      0 6px 20px rgba(37, 99, 235, 0.22);
+
+    --radius-sm:          8px;
+    --radius-md:          14px;
+    --radius-lg:          20px;
+    --radius-xl:          28px;
+
+    --transition:         all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ================================================
+   RESET
+   ================================================ */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ================================================
+   BASE
+   ================================================ */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    background-color: var(--bg-base);
+    background-image:
+        radial-gradient(circle at 20% 0%,   rgba(59, 130, 246, 0.06) 0%, transparent 55%),
+        radial-gradient(circle at 80% 100%,  rgba(37,  99, 235, 0.05) 0%, transparent 55%);
+    background-attachment: fixed;
+    color: var(--text-primary);
+    min-height: 100vh;
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ================================================
+   HEADER
+   ================================================ */
+header {
+    background: var(--surface-primary);
+    padding: 18px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-soft);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h2 {
+    color: var(--accent-primary);
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header h2::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 28px;
+    background: var(--accent-gradient);
+    border-radius: 4px;
+}
+
+/* ================================================
+   NAVBAR
+   ================================================ */
+nav {
+    background: var(--surface-primary);
+    padding: 12px 48px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid var(--border-subtle);
+    flex-wrap: wrap;
+    box-shadow: var(--shadow-soft);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    background: transparent;
+    padding: 8px 17px;
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+    font-weight: 500;
+    font-size: 14px;
+    border: 1px solid transparent;
+}
+
+nav a:hover {
+    background: var(--accent-pale);
+    color: var(--accent-primary);
+    border-color: var(--border-accent);
+}
+
+nav a:first-child {
+    background: var(--accent-pale);
+    color: var(--accent-primary);
+    border-color: var(--border-accent);
+    font-weight: 600;
+}
+
+/* ================================================
+   CONTAINER
+   ================================================ */
+.container {
+    width: 92%;
+    max-width: 1140px;
+    margin: 44px auto;
+    background: var(--surface-primary);
+    padding: 44px 48px;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-medium);
+    animation: fadeUp 0.35s ease both;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* ================================================
+   AUTH BOX (login / inscription)
+   ================================================ */
+.auth-box {
+    width: 100%;
+    max-width: 440px;
+    margin: 72px auto;
+    background: var(--surface-primary);
+    padding: 50px 48px;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-deep);
+    animation: fadeUp 0.35s ease both;
+}
+
+/* ================================================
+   HEADINGS
+   ================================================ */
+h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 28px;
+    letter-spacing: 0.2px;
+}
+
+.auth-box h2 {
+    text-align: center;
+    color: var(--accent-primary);
+    margin-bottom: 36px;
+}
+
+/* Inputs plus compacts dans auth-box */
+.auth-box input,
+.auth-box select {
+    padding: 10px 13px;
+    font-size: 13px;
+    margin-bottom: 13px;
+}
+
+.auth-box button {
+    padding: 11px 20px;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+}
+
+/* ================================================
+   FORM
+   ================================================ */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* hide legacy spacers */
+form br {
+    display: none;
+}
+
+/* ================================================
+   INPUTS & SELECT
+   ================================================ */
+input,
+select {
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    background: var(--surface-secondary);
+    border: 1.5px solid var(--border-medium);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-size: 14px;
+    font-family: inherit;
+    transition: var(--transition);
+    outline: none;
+    appearance: none;
+}
+
+input::placeholder {
+    color: var(--text-muted);
+}
+
+input:hover,
+select:hover {
+    border-color: var(--border-strong);
+    background: var(--surface-primary);
+}
+
+input:focus,
+select:focus {
+    border-color: var(--accent-primary);
+    background: var(--surface-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+input[readonly] {
+    background: var(--bg-subtle);
+    color: var(--text-muted);
+    cursor: not-allowed;
+    border-style: dashed;
+}
+
+select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%232563eb' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 40px;
+    cursor: pointer;
+}
+
+/* ================================================
+   BUTTONS
+   ================================================ */
+button {
+    width: 100%;
+    padding: 13px 20px;
+    border: none;
+    border-radius: var(--radius-md);
+    background: var(--accent-gradient);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: var(--transition);
+    letter-spacing: 0.3px;
+    position: relative;
+    overflow: hidden;
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0);
+    transition: var(--transition);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-accent);
+}
+
+button:hover::after {
+    background: rgba(255,255,255,0.08);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* ================================================
+   TABLE
+   ================================================ */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 24px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-soft);
+}
+
+table thead tr {
+    background: #1e293b;
+}
+
+table th {
+    padding: 15px 20px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    color: #042547;
+}
+
+table tbody tr {
+    background: var(--surface-primary);
+    border-bottom: 1px solid var(--border-subtle);
+    transition: var(--transition);
+}
+
+table tbody tr:nth-child(even) {
+    background: var(--surface-secondary);
+}
+
+table tbody tr:last-child {
+    border-bottom: none;
+}
+
+table tbody tr:hover {
+    background: var(--surface-elevated);
+}
+
+table td {
+    padding: 14px 20px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    vertical-align: middle;
+}
+
+table td:first-child {
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 13px;
+}
+
+/* ================================================
+   LINKS
+   ================================================ */
+a {
+    text-decoration: none;
+    color: var(--accent-primary);
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+a:hover {
+    color: #1d4ed8;
+}
+
+/* ================================================
+   ACTION BUTTONS (inline table links)
+   ================================================ */
+.add-btn,
+table td a[href*="ajouter"] {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: #fff !important;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 13px;
+    margin-bottom: 22px;
+    transition: var(--transition);
+    border: none;
+    box-shadow: 0 2px 8px rgba(22, 163, 74, 0.25);
+}
+
+.add-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(22, 163, 74, 0.32);
+}
+
+.edit-btn,
+table td a[href*="modifier"] {
+    display: inline-block;
+    padding: 6px 13px;
+    background: var(--warning-pale);
+    color: var(--warning) !important;
+    border: 1px solid rgba(217, 119, 6, 0.28);
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-weight: 500;
+    margin-right: 6px;
+    transition: var(--transition);
+}
+
+.edit-btn:hover,
+table td a[href*="modifier"]:hover {
+    background: var(--warning);
+    color: #fff !important;
+    border-color: transparent;
+}
+
+.delete-btn,
+table td a[href*="supprimer"] {
+    display: inline-block;
+    padding: 6px 13px;
+    background: var(--danger-pale);
+    color: var(--danger) !important;
+    border: 1px solid rgba(220, 38, 38, 0.25);
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.delete-btn:hover,
+table td a[href*="supprimer"]:hover {
+    background: var(--danger);
+    color: #fff !important;
+    border-color: transparent;
+}
+
+/* ================================================
+   MESSAGE (alerts)
+   ================================================ */
+.message {
+    text-align: center;
+    padding: 12px 18px;
+    border-radius: var(--radius-md);
+    margin-bottom: 22px;
+    font-size: 14px;
+    font-weight: 500;
+    background: var(--accent-pale);
+    color: var(--accent-primary);
+    border: 1px solid var(--border-accent);
+}
+
+.message:empty {
+    display: none;
+}
+
+/* ================================================
+   BACK LINK
+   ================================================ */
+.container a[href*="index"] {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 18px;
+    background: var(--surface-secondary);
+    border: 1.5px solid var(--border-medium);
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 14px;
+    transition: var(--transition);
+}
+
+.container a[href*="index"]:hover {
+    background: var(--surface-elevated);
+    color: var(--text-primary);
+    border-color: var(--border-strong);
+}
+
+/* ================================================
+   FOOTER
+   ================================================ */
+footer {
+    background: var(--surface-primary);
+    border-top: 1px solid var(--border-subtle);
+    padding: 22px 48px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+    letter-spacing: 0.3px;
+    margin-top: 60px;
+    box-shadow: 0 -2px 10px rgba(15,23,42,0.05);
+}
+
+footer::before {
+    content: '© 2025 Gestion Clients — ';
+}
+
+/* ================================================
+   SCROLLBAR
+   ================================================ */
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-medium);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-primary);
+}
+
+/* ================================================
+   SELECTION
+   ================================================ */
+::selection {
+    background: rgba(37, 99, 235, 0.18);
+    color: var(--accent-primary);
+}
+
+/* ================================================
+   RESPONSIVE
+   ================================================ */
+@media (max-width: 768px) {
+    header,
+    nav {
+        padding: 14px 20px;
+    }
+
+    .container,
+    .auth-box {
+        width: 95%;
+        padding: 28px 22px;
+        margin: 24px auto;
+    }
+
+    nav {
+        gap: 8px;
+    }
+
+    nav a {
+        padding: 7px 12px;
+        font-size: 13px;
+    }
+
+    table td {
+        padding: 11px 13px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-box {
+        padding: 30px 18px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+}

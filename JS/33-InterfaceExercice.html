@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulaire</title>
+<script>
+function verifier() {
+    var t1 = document.f.t1;
+    var t2 = document.f.t2;
+    var t3 = document.f.t3;
+    var filiere = document.f.filiere;
+    var t5 = document.f.t5;
+
+    // Vérification nom
+    var x = /z$/i;
+    if (x.test(t1.value)) {
+        alert("Attention : le nom ne doit pas se terminer par 'z'");
+        return;
+    }
+
+    // Vérification prénom
+    if (t2.value === "") {
+        alert("Attention : le prénom ne peut pas être vide");
+        return;
+    }
+
+    var loisirs = "";
+    if (document.f.sport.checked) loisirs += "Sport ";
+    if (document.f.lecture.checked) loisirs += "Lecture ";
+    if (document.f.musique.checked) loisirs += "Musique ";
+    if (loisirs === "") loisirs = "Aucun";
+
+    // Affichage
+    t5.value = "Tu t'appelles " + t1.value + " " + t2.value + "\n" +
+               "Ton sexe est " + t3.value + "\n" +
+               "Tes loisirs sont " + loisirs + "\n" +
+               "Ta filière est " + filiere.value;
+}
+</script>
+</head>
+<body>
+<form name="f">
+    Nom : <input type="text" name="t1"><br><br>
+    Prenom : <input type="text" name="t2"><br><br>
+    Sexe : 
+    <input type="radio" name="t3" value="Masculin">Masculin
+    <input type="radio" name="t3" value="Féminin">Féminin<br><br>
+    Loisirs : 
+    <input type="checkbox" name="sport" value="Sport">Sport
+    <input type="checkbox" name="lecture" value="Lecture">Lecture
+    <input type="checkbox" name="musique" value="Musique">Musique<br><br>
+    Filière : 
+    <select name="filiere">
+        <option>TDI</option>
+        <option>TRI</option>
+    </select><br><br>
+
+    Resultat : <br>
+    <textarea name="t5" rows="7" cols="50"></textarea><br><br>
+
+    <input type="button" value="Afficher" onclick="verifier()">
+</form>
+</body>
+</html>

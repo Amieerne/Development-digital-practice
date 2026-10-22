@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Somme matrice</title>
+
+    <script>
+        function somme(t, l, c){
+            var s = 0;
+            for (var i = 0; i < l; i++){
+                for (var j = 0; j < c; j++){
+                    s = s + parseInt(t[i][j]);
+                }
+            }
+            return s;
+        }
+    </script>
+</head>
+
+<body>
+
+<script>
+    var m = parseInt(prompt("Donner nombre de lignes :"));
+    var n = parseInt(prompt("Donner nombre de colonnes :"));
+    var t = [];
+
+    for (var i = 0; i < m; i++){
+        t[i] = [];
+        for (var j = 0; j < n; j++){
+            t[i][j] = prompt("t[" + i + "][" + j + "] = ");
+        }
+    }
+    var result = somme(t, m, n);
+    document.write("La somme = " + result);
+</script>
+
+</body>
+</html>

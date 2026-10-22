@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    var l , c , k , m , s=0 , nb=0 ;
+
+    l = parseInt(prompt("Donner dimension lignes :",""));
+    c = parseInt(prompt("Donner dimension colonnes :",""));
+
+    var t = new Array (l,c);
+
+    for ( var i = 0 ; i < l ; i++)
+    {
+        t[i]=new Array()
+    }
+
+    // remplissage
+    for ( var i = 0 ; i < l ; i++)
+    {
+        for ( j = 0 ; j<c;j++)
+        {
+            k = parseInt(prompt("Donner l'element ["+ i +"]["+ j +"] :",""));
+            t[i][j]=k;
+        }
+    }
+
+    // moyenne totale
+    var s1 = 0;
+    for ( var i = 0 ; i < l ; i++)
+    {
+        for ( j = 0 ; j<c;j++)
+        {
+            s1 = s1 + t[i][j];
+        }
+    }
+    var m1 = s1/(l*c);
+
+    // moyenne des nombres pairs
+    for ( var i = 0 ; i < l ; i++)
+    {
+        for ( j = 0 ; j<c;j++)
+        {
+            if(t[i][j] % 2 == 0)
+            {
+                s = s + t[i][j];
+                nb = nb + 1;
+            }        
+        }
+    }
+    var m2 = s/nb;
+
+    // max
+    m = t[0][0];
+    for ( var i = 0 ; i < l ; i++)
+    {
+        for ( j = 0 ; j<c;j++)
+        {
+            if (t[i][j] > m)
+            {
+                m = t[i][j];
+            }
+        }
+    }
+
+    document.write("Moyenne totale : " + m1 + "<br>");
+    document.write("Moyenne des pairs : " + m2 + "<br>");
+    document.write("Le max est : " + m);
+
+</script>
+
+</body>
+</html>

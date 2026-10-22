@@ -1,0 +1,6 @@
+ID: 121, Nom: karimi farid, Date: 2026-04-26 13:51:58, Niveau: Débutant, Technologies: HTML/CSS, Ville: Casablanca, Motivation: 
+ ================================================= 
+ID: 500, Nom: Achraf hafidi, Date: 2026-04-26 13:52:24, Niveau: Intermédiaire, Technologies: JavaScript&PHP, Ville: Rabat, Motivation: 
+ ================================================= 
+ID: 899, Nom: nabili nabil, Date: 2026-04-26 13:52:38, Niveau: Avancé, Technologies: JavaScript&PHP, Ville: Meknès, Motivation: 
+ ================================================= 

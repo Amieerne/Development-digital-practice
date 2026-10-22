@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+</head>
+<body>
+     <h2><u>Inscription</u></h2>
+    <form action="script.php" method="post">
+      <label for="id">ID :</label>
+      <input type="number" id="id" step="1" min="1" value="1">
+
+      <br>
+      <br>
+
+      <label for="name">Nom :</label>
+      <input type="text" id="name" pattern="[a-z A-Z]{2,}" required>
+      <br>
+      <br>
+      <label for="prenom">Prenom :</label>
+      <input type="text" id="prenom" pattern="[a-z A-Z]{2,}" required>
+
+      <br>
+      <br>
+
+      <label for="dt">Date naissance :</label>
+      <input type="date" id="dt">
+
+      <br>
+      <br>
+
+      <label for="sexe">Sexe :</label>
+
+      <input type="radio" name="radio" id="select" value="Masculin">
+      <label for="mas">Masculin </label>
+
+      <input type="radio" name="radio" id="select" value="Feminin">
+      <label for="fem">Feminin </label>
+
+      <br>
+      <br>
+
+      <label for="adresse">Adresse :</label>
+      <br>
+      <textarea placeholder="Donner L'adresse ici" id="adresse"></textarea>
+      <br>
+
+      <label>Telephone :</label>
+      <input type="tel" id="Telephone" placeholder="+212 600000000">
+      <br>
+
+      <label for="url">Site web :</label>
+      <input type="url" id="url">
+      <br>
+
+      <label for="Email">Email :</label>
+      <input type="email" id="Email" placeholder="youremail@gmail.com">
+      <br>
+
+      <label for="check">Loisirs :</label>
+      <br>
+      <input type="checkbox" id="box1">
+      <label for="box1">Sport</label>
+      <br>
+      <input type="checkbox" id="box2">
+      <label for="box2">Lecture</label>
+      <br>
+      <input type="checkbox" id="box3">
+      <label for="box3">Photoghraphie</label>
+      <br>
+
+      <label for="se">Domaine specialite :</label>
+      <select name="Domaine" id="se">
+        <option value="Informatique">Informatique</option>
+        <option value="Industrie">Industrie</option>
+        <option value="Tertiaire">Tertiaire</option>
+      </select>
+      <br>
+
+      <input type="reset" value="Effacer">
+      <input type="submit" value="S'inscrire" onclick="alert('Inscription complete')">
+    </form>
+    
+</body>
+</html>

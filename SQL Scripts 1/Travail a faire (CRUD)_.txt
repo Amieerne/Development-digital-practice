@@ -1,0 +1,16 @@
+Travail a faire (CRUD):
+Pour selectionner la bd :
+use ma_db;
+Extraire les donnes de la table "Etudiant": (Read)
+select * from ma_db.etudiant
+Voir la structure de la table:
+describe etudiant
+Inserer un nouvel enregistrement: (Create)
+insert into etudiant ( CneEtu ,NomCompletEtu , EmailEtu , AdresseEtu , TelEtu) values ( 303 , 'Amine Boubekraoui' , 'Test@email.com' , 'exampleadresse' , 18292928)
+Modifier un enregistrement: (Update)
+update etudiant set EmailEtu = 'Test1@gmail.com' where code=303
+Supprimer un enregistrement: (Delete)
+delete from etudiant where code=303
+
+
+

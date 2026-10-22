@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculatrice simple</title>
+    <script>
+        function ajouter(){
+            var elt=document.createElement("tr");
+            document.getElementById("t1").appendChild(elt);
+            var case1=document.createElement("td");
+            case1.innerHTML=prompt("Entrez le nom");
+            elt.appendChild(case1);
+            var case2=document.createElement("td");
+            case2.innerHTML=prompt("Entrez le prenom");
+            elt.appendChild(case2);
+        }
+    </script>
+</head>
+<body>
+    <table id="t1" border="1">
+        <tr>
+            <th>Nom</th>
+            <th>Prenom</th>
+        </tr>
+    </table>
+    <button onclick="ajouter()">Ajouter</button>
+</body>
+</html>

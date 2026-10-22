@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var l;
+    l = parseInt(prompt("Donner dimension :",""));
+    var t = new Array(l);
+
+    for (var i = 0; i < l; i++) {
+        t[i] = new Array();
+    }
+
+    for (var i = 0; i < l; i++) {
+        for (var j = 0; j < l; j++) {
+            if (j <= i) {
+                t[i][j] = "*";
+            } 
+            else  
+            {
+                t[i][j] = "";
+            }
+        }
+    }
+
+    for (var i = 0; i < l; i++) {
+        for (var j = 0; j < l; j++) {
+            document.write(t[i][j] + " ");
+        }
+    document.write("<br>");
+    }
+    </script>
+</body>
+</html>

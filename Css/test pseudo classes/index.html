@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo classes </title>
+    <style>
+        h2{
+            color: rgb(3, 3, 98);
+            text-decoration: underline;
+        }
+        .survole:hover{
+            background-color: rgb(237, 31, 31);
+            border-left: 3px solid rgb(136, 15, 15);
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 700;
+        }
+        input:focus{
+            background-color: khaki;
+            font-weight: bold;
+        }
+        input:checked + label{
+            font-weight: bold;
+            color: rgb(26, 26, 198);
+        }
+        ul li:first-child{
+            background-color: bisque;
+        }
+        ul li:last-child {
+            background-color: coral;
+        }
+        ul li:nth-child(2){
+            background-color: cornflowerblue;
+        }
+        ul li:nth-child(even){
+            color: rgb(252, 255, 94);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            padding: 5px;
+        }
+        ul li:nth-child(odd){
+            color: darkmagenta;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            padding: 5px;
+        }
+        p:not(.exclude-me){
+            background-color: aquamarine;
+            border-left: 3px solid rgb(63, 157, 126);
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Pseudo-classes</h2>
+    <section>
+        <h3>:hover</h3>
+        <p class="survole">Passe ta souris ici .</p>
+
+        <h3>:focus</h3>
+        <input type="text" placeholder="Cliquer ici">
+
+        <h3>:checked</h3>
+        <input type="checkbox" name="ck">
+        <label for="ck">Coche moi pour activer le style</label>
+
+        <h3>:first-child / :last-child / :nth-child()</h3>
+        <ul>
+            <li>Premier element</li>
+            <li>Element pair</li>
+            <li>Element impair</li>
+            <li>Dernier element</li>
+        </ul>
+
+        <h3>:not()</h3>
+        <p id="exclude-me">Je suis une paragraph</p>
+        <p id="test">Je suis une paragraph</p>
+        <p class="exclude-me">Je suis une paragraph</p>
+        <p>Je suis une paragraph</p>
+    </section>
+
+    
+</body>
+</html>

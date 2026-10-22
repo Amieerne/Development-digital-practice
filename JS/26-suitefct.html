@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suite</title>
+    <script>
+        function suite(n,x)
+        {
+            var s = 0 , p = 1 , z = 1 , i;
+
+            for (i = 1; i <= n; i++)
+            {
+                z = z * x;   // x^i
+                p = p * i;   // i!
+                s = s + z / p;
+            }
+
+            return s + 1; 
+        }
+    </script>
+</head>
+<body>
+    <script>
+        var n = parseInt(prompt("Donner n :"));
+        var x = parseFloat(prompt("Donner x :"));
+
+        document.write("Resultat = " + suite(n,x));
+    </script>
+</body>
+</html>

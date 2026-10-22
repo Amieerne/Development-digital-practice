@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<form name="f">
+
+    Produit : <input type="text" name="t1"><br><br>
+    Prix Unitaire : <input type="text" name="t2"><br><br>
+    Quantite : <input type="text" name="t3"><br><br>
+
+    Total : <input type="text" name="t4" readonly><br><br>
+
+    <input type="button" name="b1" value="PT" onclick="prixTotal()">
+
+</form>
+
+<script>
+function prixTotal(){
+
+    var f = document.f;
+
+    // Produit
+    for (var i = 0; i < f.t1.value.length; i++){
+        if (f.t1.value.charAt(i) == "z"){
+            alert("Produit contient z");
+            return;
+        }
+    }
+
+    // Prix
+    if (f.t2.value.length > 3){
+        alert("Prix depasse 3 chiffres");
+        return;
+    }
+
+    // Quantite
+    var q = parseInt(f.t3.value);
+    if (q < 1000 || q > 2000){
+        alert("Quantite doit etre entre 1000 et 2000");
+        return;
+    }
+
+    // Resultat
+    var p = parseInt(f.t2.value);
+    f.t4.value = p * q;
+}
+</script>
+
+</body>
+</html>

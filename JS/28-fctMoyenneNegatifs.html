@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Fonctions Tableau</title>
+</head>
+
+<body>
+
+<script>
+
+// moyenne des valeurs négatives
+function moyenne_negatifs(T, N) {
+    var S = 0, NB = 0;
+
+    for (var i = 0; i < N; i++) {
+        if (T[i] < 0) {
+            S = S + T[i];
+            NB = NB + 1;
+        }
+    }
+    return S / NB;
+}
+
+
+// moyenne des indices des valeurs positives
+function moyenne_indice(T, N) {
+    var S = 0, NB = 0;
+
+    for (var i = 0; i < N; i++) {
+        if (T[i] > 0) {
+            S = S + i;
+            NB = NB + 1;
+        }
+    }
+    return S / NB;
+}
+
+
+// max du tableau
+function max_tableau(T, N) {
+    var Max = T[0];
+
+    for (var i = 0; i < N; i++) {
+        if (T[i] > Max) {
+            Max = T[i];
+        }
+    }
+
+    return Max;
+}
+
+
+// nombre des négatifs
+function nb_negatifs(T, N) {
+    var NB = 0;
+
+    for (var i = 0; i < N; i++) {
+        if (T[i] < 0) {
+            NB = NB + 1;
+        }
+    }
+
+    return NB;
+}
+
+// La moyenne des diviseurs du chiffre 0,5
+function moyenne_carres_div5(T, N) {
+    var S = 0, NB = 0;
+
+    for (var i = 0; i < N; i++) {
+        if (T[i] % 5 == 0) {
+            S = S + (T[i] * T[i]);
+            NB = NB + 1;
+        }
+    }
+    return S / NB;
+}
+
+// ===== PROGRAMME PRINCIPAL =====
+
+var N = parseInt(prompt("Donner taille :"));
+var T = [];
+
+for (var i = 0; i < N; i++) {
+    T[i] = parseInt(prompt("Element [" + i + "] :"));
+}
+
+// affichage
+document.write("Moyenne négatifs : " + moyenne_negatifs(T, N) + "<br>");
+document.write("Moyenne indices positifs : " + moyenne_indice(T, N) + "<br>");
+document.write("Max : " + max_tableau(T, N) + "<br>");
+document.write("Nombre négatifs : " + nb_negatifs(T, N) +  "<br>");
+document.write("Moyenne carrés (divisible par 5) : " + moyenne_carres_div5(T, N) + "<br>"); 
+
+</script>
+
+</body>
+</html>

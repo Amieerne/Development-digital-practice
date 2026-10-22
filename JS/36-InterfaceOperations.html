@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Calculatrice</title>
+
+<script>
+function calc() {
+    var f = document.f;
+
+    var n1 = parseFloat(f.n1.value);
+    var n2 = parseFloat(f.n2.value);
+    var opS = f.opS.value;
+    var opR = "";
+
+    f.t.value = "";
+
+    var rads = f.opR;
+    for (var i = 0; i < rads.length; i++) {
+        if (rads[i].checked) {
+            opR = rads[i].value;
+        }
+    }
+
+    if (isNaN(n1) || isNaN(n2)) {
+        f.t.value = "Erreur : veuillez saisir les deux nombres";
+        return;
+    }
+
+    if (opR == "") {
+        f.t.value = "Erreur : veuillez choisir un opérateur (radio)";
+        return;
+    }
+
+    if (opS != opR) {
+        f.t.value = "Erreur : le select et le radio doivent être identiques";
+        return;
+    }
+
+    var res;
+
+    switch (opS) {
+        case "+":
+            res = n1 + n2;
+            break;
+        case "-":
+            res = n1 - n2;
+            break;
+        case "*":
+            res = n1 * n2;
+            break;
+        case "/":
+            if (n2 == 0) {
+                f.t.value = "Erreur : division par zéro impossible";
+                return;
+            }
+            res = n1 / n2;
+            break;
+    }
+
+    f.t.value = "Résultat = " + res;
+}
+</script>
+</head>
+
+<body>
+
+<form name="f">
+
+Nombre 1 :
+<input type="number" name="n1"><br><br>
+
+Nombre 2 :
+<input type="number" name="n2"><br><br>
+
+Opérateur :
+<select name="opS">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+</select><br><br>
+
+Choix radio :
+<input type="radio" name="opR" value="+"> +
+<input type="radio" name="opR" value="-"> -
+<input type="radio" name="opR" value="*"> *
+<input type="radio" name="opR" value="/"> /
+<br><br>
+
+Résultat : <br>
+<textarea name="t" rows="5" cols="40"></textarea><br><br>
+
+<input type="button" value="Calculer" onclick="calc()">
+
+</form>
+
+</body>
+</html>

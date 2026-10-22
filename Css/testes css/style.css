@@ -1,0 +1,18 @@
+h1{
+    color:brown;
+    padding: 20px;
+    border: 1px solid;
+    text-align: center;
+}
+h2{
+    color: #905010;
+    padding: 1cm;
+    border: 1px solid;
+    text-align: left;
+}
+h3{
+    color: rgb(200, 140, 255);
+    padding: 1em;
+    border: 1px solid;
+    text-align: right;
+}

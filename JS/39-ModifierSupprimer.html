@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculatrice simple</title>
+    <script>
+        function ajouter(){
+            var elt=document.createElement("tr");
+            document.getElementById("t1").appendChild(elt);
+
+            var case1=document.createElement("td");
+            case1.innerHTML=prompt("Entrez le nom");
+            elt.appendChild(case1);
+
+            var case2=document.createElement("td");
+            case2.innerHTML=prompt("Entrez le prenom");
+            elt.appendChild(case2);
+
+            // bouton modifier
+            var case3=document.createElement("td");
+            var btn=document.createElement("button");
+            btn.innerHTML="Modifier";
+
+            btn.onclick=function(){
+                var nvNom=prompt("Donner le nouveau nom", case1.innerHTML);
+                var nvPrenom=prompt("Donner le nouveau prenom", case2.innerHTML);
+
+                if(nvNom!=null) case1.innerHTML=nvNom;
+                if(nvPrenom!=null) case2.innerHTML=nvPrenom;
+            }
+
+            case3.appendChild(btn);
+            elt.appendChild(case3);
+
+            // bouton supprimer
+            var case4=document.createElement("td");
+            var btnSup=document.createElement("button");
+            btnSup.innerHTML="Supprimer";
+
+            btnSup.onclick=function(){
+                elt.remove();
+            }
+
+            case4.appendChild(btnSup);
+            elt.appendChild(case4);
+        }
+    </script>
+</head>
+<body>
+    <table id="t1" border="1">
+        <tr>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Modifier</th>
+            <th>Supprimer</th>
+        </tr>
+    </table>
+    <button onclick="ajouter()">Ajouter</button>
+</body>
+</html>

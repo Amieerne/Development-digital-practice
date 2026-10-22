@@ -1,0 +1,108 @@
+img{
+    object-fit: cover;
+    border-radius: 3px;
+    margin-left: 1px;
+}
+.sidebar{
+    background-color: rgb(234, 73, 73);
+    padding: 30px;
+    position: fixed;
+    height: 100%;
+    width: 100px;
+    top: 0;
+    left: 0;
+}
+.sidebar a{
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    display: block;
+    padding: 25px;
+    justify-content: center;
+}
+.sidebar a:hover{
+    background-color: rgb(117, 95, 95);
+}
+body{
+    margin: 0px;
+    text-align: center;
+    justify-content: center;
+    display: fixed;
+}
+
+p{
+    margin-right: 10%;
+    margin-left: 20%;
+    text-align: right;
+    font-size: larger;
+    font-family: serif;
+    text-align: justify;
+    padding-bottom: 20px;
+    padding: 1px;
+    
+}
+h1{
+    font-family: serif;
+    color: brown;
+    font-size: x-large;
+}
+table{
+    border-collapse: collapse;
+}
+input[type="text"]{
+    width: 50%;
+    padding: 14px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+    font-size: 14px;
+    box-shadow: 0 0 4px black;
+  }
+  
+  input[type="text"]:focus{
+    border-color: #4a90e2;
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.3);
+  }
+  form{
+    max-width: 400px;
+    margin: 50px auto;
+    background: #ffffff;
+    padding: 25px 30px;
+    border-radius: 15px;
+    font-family: 'poppins',sans-serif;
+
+  }
+  .btn{
+    background-color: blue;
+    color: aliceblue;
+    border-radius: 5px;
+    width: 125px;
+    height: 30px;
+  }
+  table{
+    margin-left: 180px;
+    text-align: justify;
+    align-items: center;
+  }
+  table.tbl{
+      margin-left: 350px;
+      width: 50%;
+      height: 300px;
+      background-color: rgb(230, 225, 225);
+      text-align: center;
+  }
+button{
+    background: #0077ff;
+    color: aliceblue;
+    border: none;
+    border-radius: 3px;
+    padding: 4px;
+    font-size: 13px;
+    width: 25%;
+    cursor: pointer;
+}
+button:hover{
+    background:red;
+}

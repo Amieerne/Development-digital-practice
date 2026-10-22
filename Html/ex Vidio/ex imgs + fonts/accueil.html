@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Categories</title>
+  <style>
+    body{
+      padding: 0;
+      margin: 0;
+      background-color: rgb(183, 232, 229);
+      padding: 5px;
+      margin-left: 95px;
+    }
+    h1{
+      font-family: Georgia, serif;
+    }
+    img{
+      border: 2px solid black;
+      border-radius: 15px;
+      margin: 3px;
+      object-fit: cover;
+    }
+    /* Exemple de telechargement du font (importee localement)*/
+    @font-face {
+      font-family: 'fontx';
+      src: url(Fonts/we.ttf);
+    }
+    h1{
+      font-family: fontx , sans-serif;
+    }
+  </style>
+</head>
+<body>
+<h1>Veuillez selectionner une categorie pour continuer :</h1>
+   <picture>
+    <a href="animal.html" title="cliquer ici ">
+    <source srcset="animal" media="(min-width : 600px)">
+    <img src="./images/eva2.jpg" width="300px" height="200px">
+    </a>
+   </picture>
+
+   <picture>
+    <a href="voiture.html" title="cliquer ici ">
+    <source srcset="voiture" media="(min-width : 600px)">
+    <img src="./images/cars.jpg" width="300px" height="200px">
+    </a>
+   </picture>  
+   
+   <picture>
+    <a href="Telephone.html" title="cliquer ici ">
+    <source srcset="Telephone" media="(min-width : 600px)">
+    <img src="https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg" width="300px" height="200px">
+    </a>
+   </picture>
+
+   <picture>
+    <a href="arbre.html" title="cliquer ici ">
+    <source srcset="arbre" media="(min-width : 600px)">
+    <img src="https://images.pexels.com/photos/1632790/pexels-photo-1632790.jpeg" width="300px" height="200px">
+    </a>
+   </picture>
+  
+
+</body>
+</html>

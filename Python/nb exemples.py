@@ -1,0 +1,11 @@
+t=[1,2,3,4]
+b=t[0:2]
+print(b)
+T=[1,2,3,4]
+print(T.count(2))
+T=[1,2,3,4]
+print(T.clear())
+T=[1,2,3,4]
+T.insert(0,"e")
+print(T)
+a=["hafidi","hafidi","hafidi"]

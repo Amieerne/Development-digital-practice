@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horloge</title>
+</head>
+<body>
+<script>
+    let h = parseInt(prompt("Donner l'heure :"));
+    let m = parseInt(prompt("Donner minutes :"));
+    let s = parseInt(prompt("Donner secondes :"));
+
+    if (s < 59) {
+        s += 1;
+    } else {
+        s = 0; 
+        if (m < 59) {
+            m += 1;
+        } else {
+            m = 0;
+            if (h < 23) {
+                h += 1;
+            } else {
+                h = 0;
+            }
+        }
+    }
+
+    document.write(h + ":" + m + ":" + s);
+</script>
+</body>
+</html>

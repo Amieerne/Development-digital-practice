@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somme</title>
+    <script>
+        function somme(t,n)
+        {
+            var s = 0;
+            for (var i = 0; i < n; i++)
+            {
+                s = s + t[i];
+            }
+            return s;
+        }
+    </script>
+</head>
+<body>
+    <script>
+        var m = parseInt(prompt("Donner dimension :"));
+        var v = [];
+
+        for (var i = 0; i < m; i++)
+        {
+            var k = parseInt(prompt("Donner l'element d'indice :" + i));
+            v[i] = k;
+        }
+
+        document.write(somme(v,m));
+    </script>
+</body>
+</html>

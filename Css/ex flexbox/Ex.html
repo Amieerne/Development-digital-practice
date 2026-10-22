@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exercice Flexbox – Débutant</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f4f6;
+      padding: 40px;
+    }
+
+    .container {
+      background: #1f2937;
+      height: 200px;
+      padding: 16px;
+      display: flex; /* 1- Activer Flexbox*/
+      justify-content: center; /* 2- l'axe principale (Horizontale)*/
+      align-items: center; /* 3- l'axe secondaire (vertitale)*/
+      gap: 20px; /* 4-*/
+    }
+
+    .item {
+      background: #e5e7eb;
+      padding: 12px;
+      width: 80px;
+      text-align: center;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    #B{
+        flex-grow: 1; /*5-*/
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Exercice Flexbox</h2>
+
+  <div class="container">
+    <div class="item">A</div>
+    <div class="item" id="B">B</div>
+    <div class="item">C</div>
+  </div>
+
+</body>
+</html>

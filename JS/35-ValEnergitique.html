@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Calories</title>
+
+<script>
+function calc() {
+    var f = document.f;
+
+    var total = 0;
+    var check = false;
+
+    var res = "";
+
+    if (f.pain.checked) {
+        check = true;
+        var g1 = parseFloat(f.g1.value);
+        total += (g1 * 275) / 100;
+    }
+
+    if (f.viande.checked) {
+        check = true;
+        var g2 = parseFloat(f.g2.value);
+        total += (g2 * 180) / 100;
+    }
+
+    if (f.legumes.checked) {
+        check = true;
+        var g3 = parseFloat(f.g3.value);
+        total += (g3 * 40) / 100;
+    }
+
+    if (f.banane.checked) {
+        check = true;
+        var n1 = parseInt(f.n1.value);
+        total += n1 * 116;
+    }
+
+    if (f.pomme.checked) {
+        check = true;
+        var n2 = parseInt(f.n2.value);
+        total += n2 * 80;
+    }
+
+    if (f.yaourt.checked) {
+        check = true;
+        var n3 = parseInt(f.n3.value);
+        total += n3 * 140;
+    }
+
+    if (!check) {
+        f.t.value = "Erreur : vous devez cocher au moins un aliment";
+        return;
+    }
+
+    res = "Total des calories = " + total + " kcal";
+    f.t.value = res;
+}
+</script>
+</head>
+
+<body>
+
+<form name="f">
+
+Pain (275 kcal / 100g)
+<input type="checkbox" name="pain">
+Grammes : <input type="number" name="g1" value="0"><br><br>
+
+Viande (180 kcal / 100g)
+<input type="checkbox" name="viande">
+Grammes : <input type="number" name="g2" value="0"><br><br>
+
+Légumes (40 kcal / 100g)
+<input type="checkbox" name="legumes">
+Grammes : <input type="number" name="g3" value="0"><br><br>
+
+Banane (116 kcal)
+<input type="checkbox" name="banane">
+Nombre : <input type="number" name="n1" value="0"><br><br>
+
+Pomme (80 kcal)
+<input type="checkbox" name="pomme">
+Nombre : <input type="number" name="n2" value="0"><br><br>
+
+Yaourt (140 kcal)
+<input type="checkbox" name="yaourt">
+Nombre : <input type="number" name="n3" value="0"><br><br>
+
+Résultat : <br>
+<textarea name="t" rows="5" cols="40"></textarea><br><br>
+
+<input type="button" value="Calculer" onclick="calc()">
+
+</form>
+
+</body>
+</html>

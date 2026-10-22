@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     var l , c , k , m;
+        l = parseInt(prompt("Donner dimension lignes :",""));
+        c = parseInt(prompt("Donner dimension colonnes :",""));
+        var t = new Array (l,c);
+        for ( var i = 0 ; i < l ; i++)
+        {
+            t[i]=new Array()
+        }
+        for ( var i = 0 ; i < l ; i++)
+        {
+            for ( j = 0 ; j<c;j++)
+            {
+                k = parseInt(prompt("Donner l'element ["+ i +"]["+ j +"] :",""));
+                t[i][j]=k;
+            }
+        }
+        x = parseInt(prompt("Donner l'element x :"));
+        b = false;
+         for ( var i = 0 ; i < l ; i++)
+        {
+            for ( j = 0 ; j<c;j++)
+            {
+                if (t[i][j] == x)
+                {
+                    b = true;
+                }
+            }
+        }
+        if ( b == true)
+        {
+            document.write("Il existe")
+        }
+        else
+        {
+            document.write("Il n'existe pas ")
+        }
+        </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var l , k , m , s=0 ;
+    l = parseInt(prompt("Donner dimension lignes :",""));
+    var t = new Array (l);
+
+    for ( var i = 0 ; i < l ; i++)
+    {
+        t[i]=new Array()
+    }
+
+    for ( var i = 0 ; i < l ; i++)
+    {
+        for ( j = 0 ; j<l;j++)
+        {
+            k = parseInt(prompt("Donner l'element ["+ i +"]["+ j +"] :",""));
+            t[i][j]=k;
+        }
+    }
+
+    for ( var i = 0 ; i < l ; i++)
+    {
+        for ( j = 0 ; j<l;j++)
+        {
+            if ( i == j)
+            {
+                s=s+t[i][j];
+            }
+        }
+    }
+
+    m = s / l;
+    document.write("La moyenne de diagonale principale est :"+m);
+    </script>
+</body>
+</html>

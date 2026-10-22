@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Phone Interface</title>
+
+<script src="jquery-3.2.1.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="phone">
+
+    <div id="home">
+        <button id="btnMessage">Message</button>
+        <button id="btnPhoto">Photo</button>
+    </div>
+
+    <div id="messageSection" class="section">
+        <button class="retour"> Retour</button>
+        <textarea id="inputText"></textarea>
+        <button id="sendBtn">Envoyer</button>
+        <textarea id="outputText"></textarea>
+    </div>
+
+    <div id="photoSection" class="section">
+        <button class="retour"> Retour</button>
+        <div id="photos">
+            <img src="https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg">
+            <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg">
+            <img src="https://images.pexels.com/photos/34950/pexels-photo.jpg">
+            <img src="https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg">
+            <img src="https://images.pexels.com/photos/247599/pexels-photo-247599.jpeg">
+            <img src="https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg">
+        </div>
+    </div>
+
+</div>
+
+<script>
+$(function(){
+
+    $("#btnMessage").click(function(){
+        $("#home").hide();
+        $("#messageSection").show();
+    });
+
+    $("#btnPhoto").click(function(){
+        $("#home").hide();
+        $("#photoSection").css("display","flex");
+    });
+
+    $(".retour").click(function(){
+        $(".section").hide();
+        $("#home").show();
+    });
+
+    $("#sendBtn").click(function(){
+        $("#outputText").val($("#inputText").val());
+    });
+
+});
+</script>
+
+</body>
+</html>

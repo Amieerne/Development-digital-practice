@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var l , k , h = 0;
+    var v = [];
+
+    l = parseInt(prompt("Donner dimension lignes :",""));
+    var t = new Array(l);
+
+    for (var i = 0; i < l; i++) {
+    t[i] = new Array();
+    }
+
+    for (var i = 0; i < l; i++) {
+        for (var j = 0; j < l; j++) {
+            k = parseInt(prompt("Donner l'element ["+ i +"]["+ j +"] :",""));
+            t[i][j] = k;
+        }
+    }
+
+    for (var i = 0; i < l; i++) {
+        for (var j = 0; j < l; j++) {
+            if (i + j == l - 1) {
+                v[h] = t[i][j];
+                h++;
+            }
+        }
+    }
+
+    for (i=0; i < h ; i++)
+    {
+        document.write(v[i]);
+    }
+
+    </script>
+    
+</body>
+</html>

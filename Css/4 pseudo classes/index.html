@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 pseudo classes</title>
+    <style>
+        h2{
+            color: rgb(148, 41, 12);
+        }
+        .firstone :first-child{
+            color: blue;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .beftest::before{
+            content: '--> ';
+            color: rgb(22, 179, 40);
+        }
+        .afttest::after{
+            content: '  ... Fin';
+           font-weight: 100;
+           color: slateblue;
+        }
+        p:lang(fr){
+            font-weight: bold;
+            background-color: rgb(133, 107, 248);
+        }
+    </style>
+</head>
+<body>
+    <h2>:First-child</h2>
+    <div class="firstone">
+        <p>1er paragraph</p>
+        <p>2eme paragraph</p>
+        <p>3eme paragraph</p>
+    </div>
+
+    <h2>::Before</h2>
+    <h3 class="beftest">Test d'avant</h3>
+
+    <h2>::after</h2>
+    <h3 class="afttest">Test d'apres</h3>
+
+    <h2>::Lang(fr)</h2>
+    <p lang="en">Hello world</p>
+    <p lang="fr">Bonjour</p>
+
+</body>
+</html>

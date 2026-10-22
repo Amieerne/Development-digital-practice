@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+
+        /*--------- Selecteurs de bases (simple) -------*/
+
+        /* Sélecteur de balise */
+        h1{
+            color: rgb(185, 67, 67);
+        }
+
+        /*Sélecteur de classe (.class)*/
+        .x{
+            color: blue;
+        }
+
+        /* Sélecteur d'identifiant (#id) */
+        #text{
+            color: blueviolet;
+        }
+
+        /*------- Sélecteurs d’attributs -------*/
+
+        /*[attr]*/
+        [title]{
+            background-color: rgb(151, 228, 57);
+        }
+
+        /* [attr="valeur"] */
+        [title="x"]{
+            color: coral;
+        }
+
+        /* [attr^=valeur] : la valeur commence par "valeur" (https)*/
+        [href^="https"]{
+            color: rgb(255, 0, 0);
+            font-weight: 700;
+        }
+
+        /* [attr$=valeur] : la valeur se termine par "valeur" (pdf)*/
+        [href$="pdf"]{
+            background-color: aqua;
+        }
+
+        /* [attr~=valeur] : cible un mot exact (separes b des espaces)*/
+        [data-tags~="exemple"]{
+            background-color: rgb(148, 148, 219);
+            font-size: large;
+        }
+
+        /* [attr*=valeur] : la valeur contient "etoile" n’importe où */
+        [data-tags*="etoile"]{
+            background-color: rgb(253, 227, 188);
+            font-size: large;
+        }
+
+        /* [attr|=valeur] : valeur exacte OU bien débutant par "valeur-" */
+        [name|="test"]{
+            border: 4px solid green;
+            font-size: larger;
+            font-weight: 800;
+        }
+
+
+        /*------ Sélecteurs relationnels-------*/
+
+        /* A + B : sélectionne l'élément directement après A */
+        h3 + h2 {
+            background-color: darkgoldenrod;
+        }
+
+        /* A ~ B : sélectionne tous les frères B situés après A */
+        h3 ~ h1 {
+            border: 2px dotted brown;
+            font-style: italic;
+        }
+
+        /* A > B : enfants directs uniquement */
+        #test > h3{
+            color: rgb(0, 0, 0);
+            background-color: rgb(161, 160, 160);
+        }
+
+        /* A B : tous les descendants , à n’importe quel niveau */
+        .uuu h2{
+            border: 2px solid rgb(255, 0, 0);
+            border-radius: 5px;
+            color: rgb(231, 36, 185);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!--- Selecteurs de bases (simple) --->
+     
+    <h1>Hello world</h1>
+
+    <h2 class="x">Hello world</h2>
+    <h2 class="x y z">Hello world</h2>
+
+    <h2 id="text">Hello world</h2><br><hr><br/>
+
+     <!--- Sélecteurs d’attributs --->
+
+     <!-- [attr] -->
+    <h2 title="Test">Voici un test d'attribut</h2>
+    <h2 name="Test">Voici un test d'attribut</h2>
+
+    <!-- [attr="valeur"] -->
+    <h2 title="x">Voici un test d'attribut qui la valeur ...</h2>
+    <h2 id="x">Voici un test d'attribut qui la valeur ...</h2>
+
+    <!-- [attr^=valeur] --> 
+    <a href="https://test.com">Test d'un lien qui commence par https </a> <br/>
+    <a href="http://test.com">Test d'un lien qui commence par http </a> 
+
+    <br><br>
+
+    <!-- [attr$=valeur] -->
+    <a href="data.pdf">Test d'un lien qui termine par pdf </a>
+
+    <!-- [attr~=valeur] -->
+    <p data-tags="exemple de A">Data tag fih mot exemple.</p>
+    <p data-tags="exemplede A">Data tag fih mot exemple.</p>
+
+    <!-- [attr*=valeur] -->
+    <p data-tags="voici un Exemple de * etoile">Data tag fiha "exemple" etoile f ay blassa.</p>
+    <p data-tags="voici un-Exemple-de * etoile">Data tag fiha "exemple" etoile f ay blassa.</p>
+    <p data-tags="voici unExemplede * etoile">Data tag fiha "exemple" etoile f ay blassa.</p>
+
+    <!-- [attr|=valeur] -->
+    <p name="test-du paragraph">name = "test" wla kaybda b "test-".</p>
+    <p name="-test">name = "test" wla kaybda b "test-".</p>
+    <p name="test du paragraph">name = "test" wla kaybda b "test-".</p>
+
+    
+    <br/><hr><br/>
+
+    <!--- Sélecteurs relationnels --->
+
+    <!--  A + B -->
+    <h3>Element aide pour "+"</h3>
+    <h2>Element cible</h2>
+    <h2>element test</h2>
+
+    <!--  A ~ B -->
+    <h3>element aide pour "~"</h3>
+    <h1>element cible</h1>
+    <h4>test</h4>
+    <h1>element cible</h1>
+
+    <!-- A > B -->
+    <div id="test">
+        <h3>element cible pour ">"</h3>
+        <h3>element cible pour ">" </h3>
+        <div>
+            <h3>element cible pour ">" </h3>
+        </div>
+    </div>
+
+    <!-- A B -->
+    <div class="uuu">
+        <h2>test 1</h2>
+        <h2>test 2</h2>
+        <div>
+            <h2>test 3</h2>
+        </div>
+    </div>
+
+</body>
+</html>

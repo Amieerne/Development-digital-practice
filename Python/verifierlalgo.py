@@ -1,0 +1,10 @@
+a=1
+b=2
+c=3
+if(a>1):
+    a=a+1
+else:
+ if(a>c):
+  c=c+4
+print(a)
+print(c)
